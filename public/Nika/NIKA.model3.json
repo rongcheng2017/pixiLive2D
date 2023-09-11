@@ -1,0 +1,27 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "NIKA.moc3",
+    "Textures": ["NIKA.4096/texture_00.png"],
+    "Physics": "NIKA.physics3.json",
+    "DisplayInfo": "NIKA.cdi3.json"
+  },
+  "Expressions": [
+    {
+      "Name": "happy",
+      "File": "happy.exp3.json"
+    }
+  ],
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": ["ParamEyeLOpen", "ParamEyeROpen"]
+    }
+  ]
+}
