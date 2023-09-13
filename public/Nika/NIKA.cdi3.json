@@ -52,6 +52,16 @@
 			"Name": "呼吸"
 		},
 		{
+			"Id": "Param40",
+			"GroupId": "ParamGroup2",
+			"Name": "爱心"
+		},
+		{
+			"Id": "Param53",
+			"GroupId": "ParamGroup2",
+			"Name": "爱心开关"
+		},
+		{
 			"Id": "Paramlefthand",
 			"GroupId": "ParamGroup2",
 			"Name": "左手 旋转"
@@ -215,11 +225,6 @@
 			"Id": "Param38",
 			"GroupId": "ParamGroup5",
 			"Name": "人身体变形"
-		},
-		{
-			"Id": "Param40",
-			"GroupId": "ParamGroup5",
-			"Name": "裤子透明度"
 		},
 		{
 			"Id": "Param44",
@@ -600,6 +605,10 @@
 		}
 	],
 	"Parts": [
+		{
+			"Id": "Part29",
+			"Name": "爱心.psd"
+		},
 		{
 			"Id": "Part25",
 			"Name": "物理"

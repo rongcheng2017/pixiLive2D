@@ -2,6 +2,15 @@
   <div>
     <canvas ref="liveCanvas" />
     <button @click="expressHappy">开心</button>
+    <button @click="leftcombilewall">左爬墙</button>
+    <button @click="rightcombilewall">右爬墙</button>
+    <button @click="drag">拽起</button>
+    <button @click="jumpOut">跳出</button>
+    <button @click="jumpBack">调回</button>
+    <button @click="waveDance">挥手舞</button>
+    <button @click="remove">移除</button>
+
+
   </div>
 </template>
 
@@ -18,22 +27,61 @@ export default {
   async mounted() {
     app = new PIXI.Application({
       view: this.$refs.liveCanvas,
+      transparent: true,
       autoStart: true,
-      resizeTo: window,
+      with:350,
+      height:350,
       backgroundAlpha: 0
     })
 
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
-    //model = await Live2DModel.from('./Nika/NIKA.model3.json')
-    model = await Live2DModel.from('./Mao/Mao.model3.json')
-
+    model = await Live2DModel.from('./Nika/NIKA.model3.json')
+    //model = await Live2DModel.from('./Mao/Mao.model3.json')
+    model.x =-50;
+    model.y =-100;
     app.stage.addChild(model)
-    model.scale.set(0.1) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+    model.scale.set(0.03) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+    model.on('hit', hitAreas => {
+      if (hitAreas.includes('body')) {
+        console.log("------->")
+        model.motion('touch_head')
+      }
+    });
   },
   methods: {
     expressHappy() {
       // 调用Live2D模型的表情方法，这里你可以根据需要传递不同的表情类型
-      model.expression('exp_01')
+      model.motion('TapHead',0)
+      console.log("TapHead");
+    },
+    leftcombilewall() {
+      // 调用Live2D模型的表情方法，这里你可以根据需要传递不同的表情类型
+      model.motion('LeftClimbWall')
+      console.log("leftcombilewall");
+    },
+    rightcombilewall() {
+      // 调用Live2D模型的表情方法，这里你可以根据需要传递不同的表情类型
+      model.motion('RightClimbWall')
+      console.log("rightcombilewall");
+    },
+    drag() {
+      // 调用Live2D模型的表情方法，这里你可以根据需要传递不同的表情类型
+     // model.motion('Drag',undefined, MotionPriority.FORCE);
+      model.motion('Drag',0);
+      console.log("drag");
+    },
+    jumpBack() {
+      model.motion("JumpBack");
+    },
+    jumpOut() {
+      model.motion("JumpOut");
+    },
+    waveDance(){
+      model.motion("WavingDance",0,MotionPriority.NORMAL);
+      model.expression("sleep");
+    },
+    remove(){
+      
     }
   }
 }
