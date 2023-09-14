@@ -1,19 +1,18 @@
 <template>
-  <div>
-    <canvas ref="liveCanvas" />
-    <button @click="expressHappy">开心</button>
+  <div >
+    <canvas ref="liveCanvas" style="position: absolute; top: 0; left: 0;" />
+    <!-- <button @click="expressHappy">开心</button>
     <button @click="leftcombilewall">左爬墙</button>
     <button @click="rightcombilewall">右爬墙</button>
     <button @click="drag">拽起</button>
     <button @click="jumpOut">跳出</button>
     <button @click="jumpBack">调回</button>
     <button @click="waveDance">挥手舞</button>
-    <button @click="remove">移除</button>
+    <button @click="remove">移除</button> -->
 
 
   </div>
 </template>
-
 <script>
 import * as PIXI from 'pixi.js'
 import { Live2DModel } from 'pixi-live2d-display/cubism4'
@@ -29,18 +28,26 @@ export default {
       view: this.$refs.liveCanvas,
       transparent: true,
       autoStart: true,
-      with:350,
-      height:350,
-      backgroundAlpha: 0
+      antialias:true,
+      backgroundAlpha: 0,
+      with:300,
+      height:500,
     })
-
+    //app.renderer.backgroundColor = 0x061698;
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
     model = await Live2DModel.from('./Nika/NIKA.model3.json')
     //model = await Live2DModel.from('./Mao/Mao.model3.json')
-    model.x =-50;
-    model.y =-100;
+    model.x =-60;
+    model.y =-320;
+    //app.renderer.view.with=500;
+    //app.renderer.view.height=1000;
+   // app.renderer.view.style.position = "absolute";
+   // app.renderer.view.style.display = "block";
+   // app.renderer.autoResize = true;
+    //app.renderer.resize(window.innerWidth, window.innerHeight);
     app.stage.addChild(model)
-    model.scale.set(0.03) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+  console.log("")
+    model.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
     model.on('hit', hitAreas => {
       if (hitAreas.includes('body')) {
         console.log("------->")
@@ -86,3 +93,8 @@ export default {
   }
 }
 </script>
+<style>
+::-webkit-scrollbar {
+  display: none;
+}
+</style>
