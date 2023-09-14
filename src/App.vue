@@ -1,14 +1,14 @@
 <template>
   <div >
     <canvas ref="liveCanvas" style="position: absolute; top: 0; left: 0;" />
-    <!-- <button @click="expressHappy">开心</button>
+    <button @click="expressHappy">开心</button>
     <button @click="leftcombilewall">左爬墙</button>
     <button @click="rightcombilewall">右爬墙</button>
     <button @click="drag">拽起</button>
     <button @click="jumpOut">跳出</button>
     <button @click="jumpBack">调回</button>
     <button @click="waveDance">挥手舞</button>
-    <button @click="remove">移除</button> -->
+    <button @click="remove">移除</button>
 
 
   </div>
@@ -46,7 +46,6 @@ export default {
    // app.renderer.autoResize = true;
     //app.renderer.resize(window.innerWidth, window.innerHeight);
     app.stage.addChild(model)
-  console.log("")
     model.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
     model.on('hit', hitAreas => {
       if (hitAreas.includes('body')) {

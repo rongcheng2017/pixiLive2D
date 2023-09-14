@@ -3,7 +3,7 @@
 	"FileReferences": {
 		"Moc": "NIKA.moc3",
 		"Textures": [
-			"NIKA.8192/texture_00.png"
+			"NIKA.2048/texture_00.png"
 		],
 		"Physics": "NIKA.physics3.json",
 		"DisplayInfo": "NIKA.cdi3.json",
