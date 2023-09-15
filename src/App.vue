@@ -1,6 +1,7 @@
 <template>
   <div >
-    <canvas ref="liveCanvas" style="position: absolute; top: 0; left: 0;" />
+    <!-- style="position: absolute; top: 0; left: 0;" -->
+    <canvas ref="liveCanvas" />
     <!-- <button @click="expressHappy">开心</button>
     <button @click="leftcombilewall">左爬墙</button>
     <button @click="rightcombilewall">右爬墙</button>
@@ -25,31 +26,34 @@ export default {
   async mounted() {
     app = new PIXI.Application({
       view: this.$refs.liveCanvas,
-      transparent: true,
+      transparent: false,
       autoStart: true,
       antialias:true,
       backgroundAlpha: 0,
-      // with:1300,
-      // height:1000,
+      //  with:1300,
+      //  height:1000,
     })
-    //app.renderer.backgroundColor = 0x061698;
+    app.renderer.backgroundColor = 0x061698;
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
     model = await Live2DModel.from('./Nika/NIKA.model3.json')
     //model = await Live2DModel.from('./Mao/Mao.model3.json')
-    model.x =-30;
-    model.y =-50;
+    //model.x =-30;
+    //model.y =-50;
     //app.renderer.view.with=500;
     //app.renderer.view.height=1000;
-   app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.position = "absolute";
     app.renderer.view.style.display = "block";
     app.renderer.autoResize = true;
      app.renderer.resize(window.innerWidth, window.innerHeight);
-   app.stage.addChild(model)
-    model.scale.set(0.04) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+    app.stage.addChild(model)
+    model.scale.set(0.1) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
     model.on('hit', hitAreas => {
-      if (hitAreas.includes('body')) {
+      if (hitAreas.includes('Head')) {
         console.log("------->")
        // model.motion('touch_head')
+      }
+      if(hitAreas.includes('Body')){
+        console.log("----> touch body --->")
       }
     });
   },
@@ -91,20 +95,20 @@ export default {
   }
 }
 //静止右击
-document.addEventListener("contextmenu", (event) => {
-         event.preventDefault();
-         console.log("右击---->");
-         window.chrome.webview.hostObjects.csobj.RightClick();
-      });
+// document.addEventListener("contextmenu", (event) => {
+//          event.preventDefault();
+//          console.log("右击---->");
+//          window.chrome.webview.hostObjects.csobj.RightClick();
+//       });
 
-window.chrome.webview.addEventListener('message', arg => {
-    //document.querySelector(".outer").innerHTML = arg.data.color;
-    model.motion("JumpBack");
-  });      
+// window.chrome.webview.addEventListener('message', arg => {
+//     //document.querySelector(".outer").innerHTML = arg.data.color;
+//     model.motion("JumpBack");
+//   });      
 
 </script>
-<style>
+<!-- <style>
 ::-webkit-scrollbar {
   display: none;
 }
-</style>
+</style> -->

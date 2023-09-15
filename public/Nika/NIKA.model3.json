@@ -98,6 +98,16 @@
 					"ParamEyeROpen"
 				]
 			}
+		],
+		"HitAreas": [
+			{
+				"Id": "ArtMesh80",
+				"Name": "Head"
+			},
+			{
+				"Id": "ArtMesh80",
+				"Name": "Body"
+			}
 		]
 	}
 }
