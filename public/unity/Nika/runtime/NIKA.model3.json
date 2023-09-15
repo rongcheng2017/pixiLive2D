@@ -1,0 +1,103 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "NIKA.moc3",
+		"Textures": [
+			"NIKA.2048/texture_00.png"
+		],
+		"Physics": "NIKA.physics3.json",
+		"DisplayInfo": "NIKA.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "angry_brow",
+				"File": "expressions/angry_brow.exp3.json"
+			},
+			{
+				"Name": "angry_emoji",
+				"File": "expressions/angry_emoji.exp3.json"
+			},
+			{
+				"Name": "angry_mouth",
+				"File": "expressions/angry_mouth.exp3.json"
+			},
+			{
+				"Name": "happy",
+				"File": "expressions/happy.exp3.json"
+			},
+			{
+				"Name": "sleep",
+				"File": "expressions/sleep.exp3.json"
+			},{
+				"Name": "star",
+				"File": "expressions/star.exp3.json"
+			},
+			{
+				"Name": "teeth",
+				"File": "expressions/teeth.exp3.json"
+			},
+			{
+				"Name": "yeah",
+				"File": "expressions/yeah.exp3.json"
+			}
+		],
+		"Motions": {
+			
+			"Drag": [
+				{
+					"File": "motions/drag_up.motion3.json"
+				},
+				{
+					"File": "motions/draging.motion3.json"
+				},
+				{
+					"File": "motions/drag_down.motion3.json"
+				}
+			],
+			"TapHead": [
+				{
+					"File": "motions/touch_head.motion3.json"
+				}
+			],
+			"JumpBack": [
+				{
+					"File": "motions/jump_back.motion3.json"
+				}
+			],
+			"JumpOut": [
+				{
+					"File": "motions/jump_out.motion3.json"
+				}
+			],
+			"LeftClimbWall": [
+				{
+					"File": "motions/left_climb_wall.motion3.json"
+				}
+			],
+			"RightClimbWall": [
+				{
+					"File": "motions/right_climb_wall.motion3.json"
+				}
+			],
+			"WavingDance": [
+				{
+					"File": "motions/waving_dance.motion3.json"
+				}
+			]
+		},
+		"Groups": [
+			{
+				"Target": "Parameter",
+				"Name": "LipSync",
+				"Ids": []
+			},
+			{
+				"Target": "Parameter",
+				"Name": "EyeBlink",
+				"Ids": [
+					"ParamEyeLOpen",
+					"ParamEyeROpen"
+				]
+			}
+		]
+	}
+}
