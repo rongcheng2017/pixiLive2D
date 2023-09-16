@@ -90,7 +90,7 @@ export default {
     }
   }
 }
-//静止右击
+//禁止右击
 document.addEventListener("contextmenu", (event) => {
          event.preventDefault();
          console.log("右击---->");
@@ -98,8 +98,21 @@ document.addEventListener("contextmenu", (event) => {
       });
 
 window.chrome.webview.addEventListener('message', arg => {
-    //document.querySelector(".outer").innerHTML = arg.data.color;
-    model.motion("JumpBack");
+   
+  //console.log(arg);   
+    var mgi=arg.data['motion_group_index'];
+    if(mgi==-1){
+      model.motion(arg.data['motion']);
+    }else{
+      model.motion(arg.data['motion'],mgi);
+    }
+    var exp = arg.data['expression'];
+    if(!exp){
+      exp="";
+    }
+    model.expression(exp)
+    
+    
   });      
 
 </script>
