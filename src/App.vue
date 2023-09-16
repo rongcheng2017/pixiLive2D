@@ -2,14 +2,16 @@
   <div >
     <!-- style="position: absolute; top: 0; left: 0;" -->
     <canvas ref="liveCanvas" />
-    <!-- <button @click="expressHappy">开心</button>
+    <button @click="expressHappy">开心</button>
     <button @click="leftcombilewall">左爬墙</button>
     <button @click="rightcombilewall">右爬墙</button>
     <button @click="drag">拽起</button>
     <button @click="jumpOut">跳出</button>
     <button @click="jumpBack">调回</button>
     <button @click="waveDance">挥手舞</button>
-    <button @click="remove">移除</button> -->
+    <button @click="hearing">聆听</button>
+    <button @click="addExpression">添加表情</button>
+    <button @click="remove">取消表情</button>
 
   </div>
 </template>
@@ -41,12 +43,12 @@ export default {
     //model.y =-50;
     //app.renderer.view.with=500;
     //app.renderer.view.height=1000;
-    app.renderer.view.style.position = "absolute";
-    app.renderer.view.style.display = "block";
-    app.renderer.autoResize = true;
-     app.renderer.resize(window.innerWidth, window.innerHeight);
+    // app.renderer.view.style.position = "absolute";
+    // app.renderer.view.style.display = "block";
+    // app.renderer.autoResize = true;
+    //  app.renderer.resize(window.innerWidth, window.innerHeight);
     app.stage.addChild(model)
-    model.scale.set(0.1) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+    model.scale.set(0.05) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
     model.on('hit', hitAreas => {
       if (hitAreas.includes('Head')) {
         console.log("------->")
@@ -86,11 +88,19 @@ export default {
       model.motion("JumpOut");
     },
     waveDance(){
-      model.motion("WavingDance",0,MotionPriority.NORMAL);
+      model.motion("WavingDance");
+     // model.expression("sleep");
+    },
+    hearing(){
+      console.log("Hearing---->");
+      model.motion("Hearing");
+    },
+    addExpression(){
+      console.log("add expression");
       model.expression("sleep");
     },
     remove(){
-      
+      model.expression();
     }
   }
 }

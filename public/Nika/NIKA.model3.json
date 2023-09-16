@@ -82,6 +82,11 @@
 				{
 					"File": "motions/waving_dance.motion3.json"
 				}
+			],
+			"Hearing":[
+				{
+					"File": "motions/hear.motion3.json"
+				}
 			]
 		},
 		"Groups": [
@@ -101,11 +106,11 @@
 		],
 		"HitAreas": [
 			{
-				"Id": "ArtMesh80",
+				"Id": "HitAreaHead",
 				"Name": "Head"
 			},
 			{
-				"Id": "ArtMesh80",
+				"Id": "HitAreaBody",
 				"Name": "Body"
 			}
 		]
