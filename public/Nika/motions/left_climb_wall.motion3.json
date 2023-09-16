@@ -112,6 +112,17 @@
 		},
 		{
 			"Target": "Parameter",
+			"Id": "Param40",
+			"Segments": [
+				0,
+				1,
+				0,
+				3,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
 			"Id": "ParamEyeLOpen",
 			"Segments": [
 				0,
@@ -324,17 +335,6 @@
 				0,
 				3,
 				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param40",
-			"Segments": [
-				0,
-				1,
-				0,
-				3,
-				1
 			]
 		},
 		{
