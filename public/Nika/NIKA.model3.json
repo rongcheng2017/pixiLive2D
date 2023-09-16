@@ -3,7 +3,7 @@
 	"FileReferences": {
 		"Moc": "NIKA.moc3",
 		"Textures": [
-			"NIKA.2048/texture_00.png"
+			"NIKA.4096/texture_00.png"
 		],
 		"Physics": "NIKA.physics3.json",
 		"DisplayInfo": "NIKA.cdi3.json",
@@ -21,7 +21,7 @@
 				"File": "expressions/angry_mouth.exp3.json"
 			},
 			{
-				"Name": "happy",
+				"Name": "LAUGH",
 				"File": "expressions/happy.exp3.json"
 			},
 			{
@@ -41,7 +41,11 @@
 			}
 		],
 		"Motions": {
-			
+			"Breathing":[
+				{
+					"File":"motions/idle.motion3.json"
+				}
+			],
 			"Drag": [
 				{
 					"File": "motions/drag_up.motion3.json"
@@ -83,9 +87,14 @@
 					"File": "motions/waving_dance.motion3.json"
 				}
 			],
-			"Hearing":[
+			"Thinking":[
 				{
-					"File": "motions/hear.motion3.json"
+					"File": "motions/hearing.motion3.json"
+				}
+			],
+			"Saying":[
+				{
+					"File":"motions/talking.motion3.json"
 				}
 			]
 		},
