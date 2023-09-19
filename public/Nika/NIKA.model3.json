@@ -9,17 +9,10 @@
 		"DisplayInfo": "NIKA.cdi3.json",
 		"Expressions": [
 			{
-				"Name": "angry_brow",
+				"Name": "ANGRY",
 				"File": "expressions/angry_brow.exp3.json"
 			},
-			{
-				"Name": "angry_emoji",
-				"File": "expressions/angry_emoji.exp3.json"
-			},
-			{
-				"Name": "angry_mouth",
-				"File": "expressions/angry_mouth.exp3.json"
-			},
+		
 			{
 				"Name": "LAUGH",
 				"File": "expressions/happy.exp3.json"
@@ -28,7 +21,7 @@
 				"Name": "sleep",
 				"File": "expressions/sleep.exp3.json"
 			},{
-				"Name": "star",
+				"Name": "HAPPY",
 				"File": "expressions/star.exp3.json"
 			},
 			{
@@ -38,6 +31,12 @@
 			{
 				"Name": "yeah",
 				"File": "expressions/yeah.exp3.json"
+			},{
+				"Name":"NORMAL",
+				"File":"expressions/idle.exp3.json"
+			},{
+				"Name":"xianqi",
+				"File":"expressions/xianqi.exp3.json"
 			}
 		],
 		"Motions": {
@@ -46,13 +45,17 @@
 					"File":"motions/idle.motion3.json"
 				}
 			],
-			"Drag": [
-				{
-					"File": "motions/drag_up.motion3.json"
-				},
+			"Draging": [
 				{
 					"File": "motions/draging.motion3.json"
-				},
+				}
+			],
+			"DragUp": [
+				{
+					"File": "motions/drag_up.motion3.json"
+				}
+			],
+			"DragDown": [
 				{
 					"File": "motions/drag_down.motion3.json"
 				}
@@ -94,7 +97,8 @@
 			],
 			"Saying":[
 				{
-					"File":"motions/talking.motion3.json"
+					"File":"motions/saying.motion3.json",
+					"loop":"true"
 				}
 			]
 		},
@@ -119,7 +123,7 @@
 				"Name": "Head"
 			},
 			{
-				"Id": "HitAreaBody",
+				"Id": "ArtMesh80",
 				"Name": "Body"
 			}
 		]

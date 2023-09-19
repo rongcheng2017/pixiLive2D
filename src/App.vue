@@ -40,7 +40,7 @@ export default {
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
     model = await Live2DModel.from('./Nika/NIKA.model3.json')
     //model = await Live2DModel.from('./Mao/Mao.model3.json')
-    model.x =-50;
+    model.x =-55;
     model.y =-80;
     //app.renderer.view.with=500;
     //app.renderer.view.height=1000;
@@ -109,7 +109,7 @@ export default {
     },
     talk(){
       console.log("talking-->");
-      model.motion("Talk")
+      model.motion("Saying")
     }
   }
 }
@@ -127,9 +127,15 @@ window.chrome.webview.addEventListener('message', arg => {
     //debugger
     var motionExt=arg.data['motion'];
     if (motionExt) {
+      console.log("执行动画 ： "+motionExt);
+
         model.motion(motionExt);
     }
     var exp = arg.data['expression'];
+    if(!exp){
+      exp= "NORMAL"
+    }
+    console.log("执行表情 ： "+exp);
     model.expression(exp);
   }
     
