@@ -352,6 +352,11 @@
 			"Name": "看手机手出来"
 		},
 		{
+			"Id": "Param55",
+			"GroupId": "ParamGroup6",
+			"Name": "人整体消失"
+		},
+		{
 			"Id": "Param18",
 			"GroupId": "ParamGroup8",
 			"Name": "脸拖拽"

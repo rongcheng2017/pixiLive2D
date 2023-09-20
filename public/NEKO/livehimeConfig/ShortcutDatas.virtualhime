@@ -1,0 +1,251 @@
+{
+  "SwitchMode": 0,
+  "RemoveAllExpKeys": [
+    0,
+    0,
+    0
+  ],
+  "MotionShortcutKeyDatas": {
+    "冒爱心动画（制作时备用）.motion3.json": {
+      "MotionName": "冒爱心动画（制作时备用）.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "左边缘扒墙.motion3.json": {
+      "MotionName": "左边缘扒墙.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        51,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "扒墙.motion3.json": {
+      "MotionName": "扒墙.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        52,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "拖拽中哦.motion3.json": {
+      "MotionName": "拖拽中哦.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "提起来.motion3.json": {
+      "MotionName": "提起来.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        53,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "摸头.motion3.json": {
+      "MotionName": "摸头.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        120,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "放下去.motion3.json": {
+      "MotionName": "放下去.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        122,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "生气炸毛.motion3.json": {
+      "MotionName": "生气炸毛.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        54,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "睡觉.motion3.json": {
+      "MotionName": "睡觉.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        114,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "跳出来.motion3.json": {
+      "MotionName": "跳出来.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        49,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "跳回去.motion3.json": {
+      "MotionName": "跳回去.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        50,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    }
+  },
+  "ExpShortcutKeyDatas": {
+    "angry brow.exp3.json": {
+      "ExpName": "angry brow.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        100,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "angry emoji.exp3.json": {
+      "ExpName": "angry emoji.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        115,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "angry mouth.exp3.json": {
+      "ExpName": "angry mouth.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        97,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "happy.exp3.json": {
+      "ExpName": "happy.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        116,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "star.exp3.json": {
+      "ExpName": "star.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        101,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "teeth.exp3.json": {
+      "ExpName": "teeth.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        113,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "weiqv.exp3.json": {
+      "ExpName": "weiqv.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        98,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    },
+    "yeah.exp3.json": {
+      "ExpName": "yeah.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        119,
+        0,
+        0
+      ],
+      "Mode": 0,
+      "FadeDuration": 0.5
+    }
+  }
+}

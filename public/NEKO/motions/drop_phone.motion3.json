@@ -1,0 +1,214 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 0.567,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": true,
+		"CurveCount": 11,
+		"TotalSegmentCount": 22,
+		"TotalPointCount": 55,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "ParamBodyAngleX",
+			"Segments": [
+				0,
+				6,
+				1,
+				0.111,
+				6,
+				0.222,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param54",
+			"Segments": [
+				0,
+				1,
+				1,
+				0.111,
+				1,
+				0.222,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamEyeLOpen",
+			"Segments": [
+				0,
+				0.7,
+				1,
+				0.111,
+				0.7,
+				0.222,
+				1,
+				0.333,
+				1,
+				0,
+				0.567,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamEyeROpen",
+			"Segments": [
+				0,
+				0.7,
+				1,
+				0.111,
+				0.7,
+				0.222,
+				1,
+				0.333,
+				1,
+				0,
+				0.567,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamMouthForm",
+			"Segments": [
+				0,
+				1,
+				0,
+				0.567,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamMouthOpenY",
+			"Segments": [
+				0,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamEyeBallX",
+			"Segments": [
+				0,
+				0,
+				1,
+				0.111,
+				0,
+				0.222,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "ParamEyeBallY",
+			"Segments": [
+				0,
+				0.2,
+				1,
+				0.111,
+				0.2,
+				0.222,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param47",
+			"Segments": [
+				0,
+				10,
+				1,
+				0.056,
+				10,
+				0.111,
+				10,
+				0.167,
+				10,
+				1,
+				0.222,
+				10,
+				0.278,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param57",
+			"Segments": [
+				0,
+				10,
+				1,
+				0.056,
+				10,
+				0.111,
+				10,
+				0.167,
+				10,
+				1,
+				0.222,
+				10,
+				0.278,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param58",
+			"Segments": [
+				0,
+				1,
+				1,
+				0.111,
+				1,
+				0.222,
+				0,
+				0.333,
+				0,
+				0,
+				0.567,
+				0
+			]
+		}
+	]
+}

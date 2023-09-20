@@ -1,0 +1,188 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "NEKO.moc3",
+		"Textures": [
+			"NEKO.4096/texture_00.png"
+		],
+		"Physics": "NEKO.physics3.json",
+		"DisplayInfo": "NEKO.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "ANGRY",
+				"File": "expressions/angry.exp3.json"
+			},
+		
+			{
+				"Name": "HAPPY",
+				"File": "expressions/star.exp3.json"
+			},
+			{
+				"Name": "sleep",
+				"File": "expressions/sleep.exp3.json"
+			},
+			{
+				"Name": "teeth",
+				"File": "expressions/teeth.exp3.json"
+			},
+			{
+				"Name": "star",
+				"File": "expressions/star.exp3.json"
+			},
+			{
+				"Name": "yeah",
+				"File": "expressions/yeah.exp3.json"
+			},{
+				"Name":"NORMAL",
+				"File":"expressions/exp_reset.exp3.json"
+			},{
+				"Name":"xianqi",
+				"File":"expressions/xianqi.exp3.json"
+			}
+			,{
+				"Name":"Reset",
+				"File":"expressions/exp_reset.exp3.json"
+			}
+		],
+		"Motions": {
+			"Idle":[
+				{
+					"File":"motions/idle.motion3.json"
+				}
+			],
+			"Reset":[
+				{
+					"File":"motions/reset.motion3.json"
+				}
+			],
+			"HeadReset":[
+				{
+					"File":"motions/head_reset.motion3.json"
+				}
+			],
+			"SideReset":[
+				{
+					"File":"motions/side_reset.motion3.json"
+				}
+			],
+			"Breathing":[
+				{
+					"File":"motions/idle.motion3.json"
+				}
+			],
+			"Draging": [
+				{
+					"File": "motions/draging.motion3.json"
+				}
+			],
+			"DragUp": [
+				{
+					"File": "motions/drag_up.motion3.json"
+				}
+			],
+			"CENTER": [
+				{
+					"File": "motions/drag_down.motion3.json"
+				}
+			],
+			"TapHead": [
+				{
+					"File": "motions/tap_head.motion3.json"
+				}
+			],
+			"TapBody1": [
+				{
+					"File": "motions/waving_dance.motion3.json"
+				}
+			],
+			"JumpBack": [
+				{
+					"File": "motions/jump_back.motion3.json"
+				}
+			],
+			"JumpOut": [
+				{
+					"File": "motions/jump_out.motion3.json"
+				}
+			],
+			"LEFT_SAYING": [
+				{
+					"File": "motions/left_saying.motion3.json"
+				}
+			],
+			"LEFT_HEARING": [
+				{
+					"File": "motions/left_hearing.motion3.json"
+				}
+			],
+			"LEFT_BORING": [
+				{
+					"File": "motions/left_boring.motion3.json"
+				}
+			],
+			"LEFT": [
+				{
+					"File": "motions/left_normal.motion3.json"
+				}
+			],
+			"RIGHT_SAYING": [
+				{
+					"File": "motions/right_saying.motion3.json"
+				}
+			],"RIGHT_HEARING": [
+				{
+					"File": "motions/right_hearing.motion3.json"
+				}
+			],"RIGHT_BORING": [
+				{
+					"File": "motions/right_boring.motion3.json"
+				}
+			],"RIGHT": [
+				{
+					"File": "motions/right_normal.motion3.json"
+				}
+			],
+			
+			"CENTER_HEARING":[
+				{
+					"File": "motions/hearing.motion3.json"
+				}
+			],
+			"CENTER_SAYING":[
+				{
+					"File":"motions/saying.motion3.json"
+				}
+			],
+			"CENTER_BORING":[
+				{
+					"File":"motions/center_boring.motion3.json"
+				}
+			],
+			"CENTER_HoldPhone":[
+				{
+					"File":"motions/hold_phone.motion3.json"
+				}
+			],
+			"CENTER_DropPhone":[
+				{
+					"File":"motions/drop_phone.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}
