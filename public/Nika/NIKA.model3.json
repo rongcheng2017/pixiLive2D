@@ -14,19 +14,20 @@
 			},
 		
 			{
-				"Name": "LAUGH",
-				"File": "expressions/happy.exp3.json"
+				"Name": "HAPPY",
+				"File": "expressions/teeth.exp3.json"
 			},
 			{
 				"Name": "sleep",
 				"File": "expressions/sleep.exp3.json"
-			},{
-				"Name": "HAPPY",
-				"File": "expressions/star.exp3.json"
 			},
 			{
 				"Name": "teeth",
 				"File": "expressions/teeth.exp3.json"
+			},
+			{
+				"Name": "star",
+				"File": "expressions/star.exp3.json"
 			},
 			{
 				"Name": "yeah",
@@ -62,7 +63,12 @@
 			],
 			"TapHead": [
 				{
-					"File": "motions/touch_head.motion3.json"
+					"File": "motions/tap_head.motion3.json"
+				}
+			],
+			"TapBody": [
+				{
+					"File": "motions/waving_dance.motion3.json"
 				}
 			],
 			"JumpBack": [
@@ -75,21 +81,44 @@
 					"File": "motions/jump_out.motion3.json"
 				}
 			],
-			"LeftClimbWall": [
+			"LEFT_SAYING": [
 				{
-					"File": "motions/left_climb_wall.motion3.json"
+					"File": "motions/left_saying.motion3.json"
 				}
 			],
-			"RightClimbWall": [
+			"LEFT_HEARING": [
 				{
-					"File": "motions/right_climb_wall.motion3.json"
+					"File": "motions/left_hearing.motion3.json"
 				}
 			],
-			"WavingDance": [
+			"LEFT_BORING": [
 				{
-					"File": "motions/waving_dance.motion3.json"
+					"File": "motions/left_boring.motion3.json"
 				}
 			],
+			"LEFT_NORMAL": [
+				{
+					"File": "motions/left_normal.motion3.json"
+				}
+			],
+			"RIGHT_SAYING": [
+				{
+					"File": "motions/right_saying.motion3.json"
+				}
+			],"RIGHT_HEARING": [
+				{
+					"File": "motions/right_hearing.motion3.json"
+				}
+			],"RIGHT_BORING": [
+				{
+					"File": "motions/right_boring.motion3.json"
+				}
+			],"RIGHT_NORMAL": [
+				{
+					"File": "motions/right_normal.motion3.json"
+				}
+			],
+			
 			"Thinking":[
 				{
 					"File": "motions/hearing.motion3.json"
@@ -97,35 +126,29 @@
 			],
 			"Saying":[
 				{
-					"File":"motions/saying.motion3.json",
-					"loop":"true"
+					"File":"motions/saying.motion3.json"
+				}
+			],
+			"HoldPhone":[
+				{
+					"File":"motions/hold_phone.motion3.json"
 				}
 			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
 		},
-		"Groups": [
-			{
-				"Target": "Parameter",
-				"Name": "LipSync",
-				"Ids": []
-			},
-			{
-				"Target": "Parameter",
-				"Name": "EyeBlink",
-				"Ids": [
-					"ParamEyeLOpen",
-					"ParamEyeROpen"
-				]
-			}
-		],
-		"HitAreas": [
-			{
-				"Id": "HitAreaHead",
-				"Name": "Head"
-			},
-			{
-				"Id": "ArtMesh80",
-				"Name": "Body"
-			}
-		]
-	}
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		}
+	]
 }

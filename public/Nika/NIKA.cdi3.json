@@ -174,12 +174,12 @@
 		{
 			"Id": "exp7",
 			"GroupId": "ParamGroup4",
-			"Name": "A表情7"
+			"Name": "脸黑"
 		},
 		{
 			"Id": "exp8",
 			"GroupId": "ParamGroup4",
-			"Name": "A表情8"
+			"Name": "脸红"
 		},
 		{
 			"Id": "exp9",
@@ -345,6 +345,11 @@
 			"Id": "Param46",
 			"GroupId": "ParamGroup6",
 			"Name": "左手动"
+		},
+		{
+			"Id": "Param54",
+			"GroupId": "ParamGroup6",
+			"Name": "看手机手出来"
 		},
 		{
 			"Id": "Param18",
@@ -606,6 +611,14 @@
 	],
 	"Parts": [
 		{
+			"Id": "Part32",
+			"Name": "手机合成.PSD"
+		},
+		{
+			"Id": "Part31",
+			"Name": "表情.psd"
+		},
+		{
 			"Id": "Part29",
 			"Name": "爱心.psd"
 		},
@@ -656,6 +669,10 @@
 		{
 			"Id": "Part20",
 			"Name": "后发"
+		},
+		{
+			"Id": "Part30",
+			"Name": "表情"
 		},
 		{
 			"Id": "Part26",
@@ -767,6 +784,10 @@
 		}
 	],
 	"CombinedParameters": [
+		[
+			"ParamMouthForm",
+			"ParamMouthOpenY"
+		],
 		[
 			"ParamEyeBallX",
 			"ParamEyeBallY"
