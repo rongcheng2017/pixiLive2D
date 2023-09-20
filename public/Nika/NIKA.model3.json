@@ -15,7 +15,7 @@
 		
 			{
 				"Name": "HAPPY",
-				"File": "expressions/teeth.exp3.json"
+				"File": "expressions/happy.exp3.json"
 			},
 			{
 				"Name": "sleep",
@@ -41,6 +41,23 @@
 			}
 		],
 		"Motions": {
+			"Idle":[
+				{
+					"File":"motions/idle.motion3.json"		
+				},{
+					"File":"motions/idle2.motion3.json"
+				}
+			],
+			"Reset":[
+				{
+					"File":"motions/reset.motion3.json"
+				}
+			],
+			"RightReset":[
+				{
+					"File":"motions/right_side_reset.motion3.json"
+				}
+			],
 			"Breathing":[
 				{
 					"File":"motions/idle.motion3.json"
@@ -53,10 +70,10 @@
 			],
 			"DragUp": [
 				{
-					"File": "motions/drag_up.motion3.json"
+					"File": "motions/draging.motion3.json"
 				}
 			],
-			"DragDown": [
+			"CENTER": [
 				{
 					"File": "motions/drag_down.motion3.json"
 				}
@@ -66,7 +83,7 @@
 					"File": "motions/tap_head.motion3.json"
 				}
 			],
-			"TapBody": [
+			"TapBody1": [
 				{
 					"File": "motions/waving_dance.motion3.json"
 				}
@@ -96,7 +113,7 @@
 					"File": "motions/left_boring.motion3.json"
 				}
 			],
-			"LEFT_NORMAL": [
+			"LEFT": [
 				{
 					"File": "motions/left_normal.motion3.json"
 				}
@@ -113,25 +130,35 @@
 				{
 					"File": "motions/right_boring.motion3.json"
 				}
-			],"RIGHT_NORMAL": [
+			],"RIGHT": [
 				{
 					"File": "motions/right_normal.motion3.json"
 				}
 			],
 			
-			"Thinking":[
+			"CENTER_HEARING":[
 				{
 					"File": "motions/hearing.motion3.json"
 				}
 			],
-			"Saying":[
+			"CENTER_SAYING":[
 				{
 					"File":"motions/saying.motion3.json"
+				}
+			],
+			"CENTER_BORING":[
+				{
+					"File":"motions/center_boring.motion3.json"
 				}
 			],
 			"HoldPhone":[
 				{
 					"File":"motions/hold_phone.motion3.json"
+				}
+			],
+			"DropPhone":[
+				{
+					"File":"motions/drop_phone.motion3.json"
 				}
 			]
 		}
