@@ -47,7 +47,13 @@
 		"Motions": {
 			"Idle":[
 				{
+<<<<<<< HEAD
 					"File":"motions/reset.motion3.json"
+=======
+					"File":"motions/idle.motion3.json"		
+				},{
+					"File":"motions/idle2.motion3.json"
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
 				}
 			],
 			"Reset":[
@@ -55,6 +61,7 @@
 					"File":"motions/reset.motion3.json"
 				}
 			],
+<<<<<<< HEAD
 			"HeadReset":[
 				{
 					"File":"motions/head_reset.motion3.json"
@@ -63,6 +70,11 @@
 			"RightReset":[
 				{
 					"File":"motions/side_reset.motion3.json"
+=======
+			"RightReset":[
+				{
+					"File":"motions/right_side_reset.motion3.json"
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
 				}
 			],
 			"Breathing":[
@@ -158,14 +170,24 @@
 					"File":"motions/center_boring.motion3.json"
 				}
 			],
+<<<<<<< HEAD
 			"CENTER_HoldPhone":[
+=======
+			"HoldPhone":[
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
 				{
 					"File":"motions/hold_phone.motion3.json"
 				}
 			],
+<<<<<<< HEAD
 			"CENTER_DropPhone":[
 				{
 					"File":"motions/reset.motion3.json"
+=======
+			"DropPhone":[
+				{
+					"File":"motions/drop_phone.motion3.json"
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
 				}
 			]
 		}

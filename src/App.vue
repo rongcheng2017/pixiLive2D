@@ -7,8 +7,11 @@
 import * as PIXI from 'pixi.js'
 import { Live2DModel } from 'pixi-live2d-display/cubism4'
 import { MotionPriority } from 'pixi-live2d-display';
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
 
 window.PIXI = PIXI // 为了pixi-live2d-display内部调用
 let app // 为了存储pixi实例
@@ -33,6 +36,7 @@ export default {
     })
     //app.renderer.backgroundColor = 0x061698;
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
+<<<<<<< HEAD
     let characterName = "NIKA";
     if(characterId==1){
       characterName="NEKO";
@@ -42,6 +46,9 @@ export default {
     model = await Live2DModel.from(`./${characterName}/${characterName}.model3.json`)
     //model = await Live2DModel.from('./sealion/hgkoazarasi.model3.json')
 
+=======
+    model = await Live2DModel.from('./Nika/NIKA.model3.json')
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
     //model = await Live2DModel.from('https://download.lynksoul.com/models/Nika.zip')
     model.x =-55;
     model.y =-80;
@@ -77,13 +84,31 @@ document.addEventListener("contextmenu", (event) => {
 let currentMotion = '';
 window.chrome.webview.addEventListener('message', arg => {
 
+<<<<<<< HEAD
   var exp = arg.data['expression'];
+=======
+  var motionExt=arg.data['motion'];
+    if (motionExt) {
+      console.log("执行动画 ： "+motionExt);
+      if(motionExt=='DragUp'&&(currentMotion.includes('RIGHT')||currentMotion.includes('LEFT'))){
+        model.motion('Reset',undefined,MotionPriority.FORCE);
+        model.motion(motionExt);
+      }else{
+        
+        model.motion(motionExt,undefined,MotionPriority.FORCE);
+      }
+      currentMotion= motionExt;
+        //model.motion(motionExt);
+    }
+    var exp = arg.data['expression'];
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
     if(!exp){
       exp= "NORMAL"
     }
     console.log("执行表情 ： "+exp);
     model.expression("Reset");
     model.expression(exp);
+<<<<<<< HEAD
   var motionExt=arg.data['motion'];
   //if(motionExt=='CENTER_Breathing') return;  
   
@@ -107,6 +132,8 @@ window.chrome.webview.addEventListener('message', arg => {
     currentMotion= motionExt;
     }
     
+=======
+>>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
   }
   );      
 
