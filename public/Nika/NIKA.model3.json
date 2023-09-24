@@ -1,210 +1,188 @@
 {
-	"Version": 3,
-	"FileReferences": {
-		"Moc": "NIKA.moc3",
-		"Textures": [
-			"NIKA.4096/texture_00.png"
-		],
-		"Physics": "NIKA.physics3.json",
-		"DisplayInfo": "NIKA.cdi3.json",
-		"Expressions": [
-			{
-				"Name": "ANGRY",
-				"File": "expressions/angry_brow.exp3.json"
-			},
-		
-			{
-				"Name": "HAPPY",
-				"File": "expressions/happy.exp3.json"
-			},
-			{
-				"Name": "sleep",
-				"File": "expressions/sleep.exp3.json"
-			},
-			{
-				"Name": "teeth",
-				"File": "expressions/teeth.exp3.json"
-			},
-			{
-				"Name": "star",
-				"File": "expressions/star.exp3.json"
-			},
-			{
-				"Name": "yeah",
-				"File": "expressions/yeah.exp3.json"
-			},{
-				"Name":"NORMAL",
-				"File":"expressions/idle.exp3.json"
-			},{
-				"Name":"xianqi",
-				"File":"expressions/xianqi.exp3.json"
-			}
-			,{
-				"Name":"Reset",
-				"File":"expressions/exp_reset.exp3.json"
-			}
-		],
-		"Motions": {
-			"Idle":[
-				{
-<<<<<<< HEAD
-					"File":"motions/reset.motion3.json"
-=======
-					"File":"motions/idle.motion3.json"		
-				},{
-					"File":"motions/idle2.motion3.json"
->>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
-				}
-			],
-			"Reset":[
-				{
-					"File":"motions/reset.motion3.json"
-				}
-			],
-<<<<<<< HEAD
-			"HeadReset":[
-				{
-					"File":"motions/head_reset.motion3.json"
-				}
-			],
-			"RightReset":[
-				{
-					"File":"motions/side_reset.motion3.json"
-=======
-			"RightReset":[
-				{
-					"File":"motions/right_side_reset.motion3.json"
->>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
-				}
-			],
-			"Breathing":[
-				{
-					"File":"motions/idle.motion3.json"
-				}
-			],
-			"Draging": [
-				{
-					"File": "motions/draging.motion3.json"
-				}
-			],
-			"DragUp": [
-				{
-					"File": "motions/draging.motion3.json"
-				}
-			],
-			"CENTER": [
-				{
-					"File": "motions/drag_down.motion3.json"
-				}
-			],
-			"TapHead": [
-				{
-					"File": "motions/tap_head.motion3.json"
-				}
-			],
-			"TapBody1": [
-				{
-					"File": "motions/waving_dance.motion3.json"
-				}
-			],
-			"JumpBack": [
-				{
-					"File": "motions/jump_back.motion3.json"
-				}
-			],
-			"JumpOut": [
-				{
-					"File": "motions/jump_out.motion3.json"
-				}
-			],
-			"LEFT_SAYING": [
-				{
-					"File": "motions/left_saying.motion3.json"
-				}
-			],
-			"LEFT_HEARING": [
-				{
-					"File": "motions/left_hearing.motion3.json"
-				}
-			],
-			"LEFT_BORING": [
-				{
-					"File": "motions/left_boring.motion3.json"
-				}
-			],
-			"LEFT": [
-				{
-					"File": "motions/left_normal.motion3.json"
-				}
-			],
-			"RIGHT_SAYING": [
-				{
-					"File": "motions/right_saying.motion3.json"
-				}
-			],"RIGHT_HEARING": [
-				{
-					"File": "motions/right_hearing.motion3.json"
-				}
-			],"RIGHT_BORING": [
-				{
-					"File": "motions/right_boring.motion3.json"
-				}
-			],"RIGHT": [
-				{
-					"File": "motions/right_normal.motion3.json"
-				}
-			],
-			
-			"CENTER_HEARING":[
-				{
-					"File": "motions/hearing.motion3.json"
-				}
-			],
-			"CENTER_SAYING":[
-				{
-					"File":"motions/saying.motion3.json"
-				}
-			],
-			"CENTER_BORING":[
-				{
-					"File":"motions/center_boring.motion3.json"
-				}
-			],
-<<<<<<< HEAD
-			"CENTER_HoldPhone":[
-=======
-			"HoldPhone":[
->>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
-				{
-					"File":"motions/hold_phone.motion3.json"
-				}
-			],
-<<<<<<< HEAD
-			"CENTER_DropPhone":[
-				{
-					"File":"motions/reset.motion3.json"
-=======
-			"DropPhone":[
-				{
-					"File":"motions/drop_phone.motion3.json"
->>>>>>> 62f9e35306e34de7de661b34e93e7f881a922468
-				}
-			]
-		}
-	},
-	"Groups": [
-		{
-			"Target": "Parameter",
-			"Name": "LipSync",
-			"Ids": []
-		},
-		{
-			"Target": "Parameter",
-			"Name": "EyeBlink",
-			"Ids": [
-				"ParamEyeLOpen",
-				"ParamEyeROpen"
-			]
-		}
-	]
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "NIKA.moc3",
+    "Textures": ["NIKA.4096/texture_00.png"],
+    "Physics": "NIKA.physics3.json",
+    "DisplayInfo": "NIKA.cdi3.json",
+    "Expressions": [
+      {
+        "Name": "ANGRY",
+        "File": "expressions/angry_brow.exp3.json"
+      },
+
+      {
+        "Name": "HAPPY",
+        "File": "expressions/happy.exp3.json"
+      },
+      {
+        "Name": "sleep",
+        "File": "expressions/sleep.exp3.json"
+      },
+      {
+        "Name": "teeth",
+        "File": "expressions/teeth.exp3.json"
+      },
+      {
+        "Name": "star",
+        "File": "expressions/star.exp3.json"
+      },
+      {
+        "Name": "yeah",
+        "File": "expressions/yeah.exp3.json"
+      },
+      {
+        "Name": "NORMAL",
+        "File": "expressions/idle.exp3.json"
+      },
+      {
+        "Name": "xianqi",
+        "File": "expressions/xianqi.exp3.json"
+      },
+      {
+        "Name": "Reset",
+        "File": "expressions/exp_reset.exp3.json"
+      }
+    ],
+    "Motions": {
+      "Idle": [
+        {
+          "File": "motions/reset.motion3.json"
+        }
+      ],
+      "Reset": [
+        {
+          "File": "motions/reset.motion3.json"
+        }
+      ],
+      "HeadReset": [
+        {
+          "File": "motions/head_reset.motion3.json"
+        }
+      ],
+      "RightReset": [
+        {
+          "File": "motions/side_reset.motion3.json"
+        }
+      ],
+      "Breathing": [
+        {
+          "File": "motions/idle.motion3.json"
+        }
+      ],
+      "Draging": [
+        {
+          "File": "motions/draging.motion3.json"
+        }
+      ],
+      "DragUp": [
+        {
+          "File": "motions/draging.motion3.json"
+        }
+      ],
+      "CENTER": [
+        {
+          "File": "motions/drag_down.motion3.json"
+        }
+      ],
+      "TapHead": [
+        {
+          "File": "motions/tap_head.motion3.json"
+        }
+      ],
+      "TapBody1": [
+        {
+          "File": "motions/waving_dance.motion3.json"
+        }
+      ],
+      "JumpBack": [
+        {
+          "File": "motions/jump_back.motion3.json"
+        }
+      ],
+      "JumpOut": [
+        {
+          "File": "motions/jump_out.motion3.json"
+        }
+      ],
+      "LEFT_SAYING": [
+        {
+          "File": "motions/left_saying.motion3.json"
+        }
+      ],
+      "LEFT_HEARING": [
+        {
+          "File": "motions/left_hearing.motion3.json"
+        }
+      ],
+      "LEFT_BORING": [
+        {
+          "File": "motions/left_boring.motion3.json"
+        }
+      ],
+      "LEFT": [
+        {
+          "File": "motions/left_normal.motion3.json"
+        }
+      ],
+      "RIGHT_SAYING": [
+        {
+          "File": "motions/right_saying.motion3.json"
+        }
+      ],
+      "RIGHT_HEARING": [
+        {
+          "File": "motions/right_hearing.motion3.json"
+        }
+      ],
+      "RIGHT_BORING": [
+        {
+          "File": "motions/right_boring.motion3.json"
+        }
+      ],
+      "RIGHT": [
+        {
+          "File": "motions/right_normal.motion3.json"
+        }
+      ],
+
+      "CENTER_HEARING": [
+        {
+          "File": "motions/hearing.motion3.json"
+        }
+      ],
+      "CENTER_SAYING": [
+        {
+          "File": "motions/saying.motion3.json"
+        }
+      ],
+      "CENTER_BORING": [
+        {
+          "File": "motions/center_boring.motion3.json"
+        }
+      ],
+      "CENTER_HoldPhone": [
+        {
+          "File": "motions/hold_phone.motion3.json"
+        }
+      ],
+      "CENTER_DropPhone": [
+        {
+          "File": "motions/reset.motion3.json"
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": ["ParamEyeLOpen", "ParamEyeROpen"]
+    }
+  ]
 }
