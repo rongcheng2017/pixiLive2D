@@ -45,11 +45,6 @@
       }
     ],
     "Motions": {
-      "Idle": [
-        {
-          "File": "motions/reset.motion3.json"
-        }
-      ],
       "Reset": [
         {
           "File": "motions/reset.motion3.json"
@@ -60,9 +55,9 @@
           "File": "motions/head_reset.motion3.json"
         }
       ],
-      "RightReset": [
+      "Right_RESETs": [
         {
-          "File": "motions/side_reset.motion3.json"
+          "File": "motions/right_side_reset.motion3.json"
         }
       ],
       "Breathing": [
@@ -95,12 +90,12 @@
           "File": "motions/waving_dance.motion3.json"
         }
       ],
-      "JumpBack": [
+      "JUMP_BACK": [
         {
           "File": "motions/jump_back.motion3.json"
         }
       ],
-      "JumpOut": [
+      "JUMP_OUT": [
         {
           "File": "motions/jump_out.motion3.json"
         }
@@ -148,12 +143,12 @@
 
       "CENTER_HEARING": [
         {
-          "File": "motions/hearing.motion3.json"
+          "File": "motions/center_hearing.motion3.json"
         }
       ],
       "CENTER_SAYING": [
         {
-          "File": "motions/saying.motion3.json"
+          "File": "motions/center_saying.motion3.json"
         }
       ],
       "CENTER_BORING": [
