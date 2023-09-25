@@ -67,12 +67,12 @@
       ],
       "RIGHT_BREATHING": [
         {
-          "File": "motions/right_reset.motion3.json"
+          "File": "motions/head_reset.motion3.json"
         }
       ],
       "LEFT_BREATHING": [
         {
-          "File": "motions/left_reset.motion3.json"
+          "File": "motions/head_reset.motion3.json"
         }
       ],
       "Draging": [
