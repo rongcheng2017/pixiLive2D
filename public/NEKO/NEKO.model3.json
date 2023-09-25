@@ -35,7 +35,7 @@
 			},
 			{
 			  "Name": "NORMAL",
-			  "File": "expressions/idle.exp3.json"
+			  "File": "expressions/exp_reset.exp3.json"
 			},
 			{
 			  "Name": "xianqi",
@@ -47,7 +47,7 @@
 			}
 		  ],
 		  "Motions": {
-			"Reset": [
+			"RESET": [
 			  {
 				"File": "motions/reset.motion3.json"
 			  }
@@ -64,7 +64,7 @@
 			],
 			"CENTER_Breathing": [
 			  {
-				"File": "motions/idle.motion3.json"
+				"File": "motions/reset.motion3.json"
 			  }
 			],
 			"Draging": [

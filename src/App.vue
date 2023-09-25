@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- style="position: absolute; top: 0; left: 0"  -->
-    <canvas ref="liveCanvas" />
-    <button @click="leftcombilewall">左爬墙</button>
+    <canvas ref="liveCanvas" style="position: absolute; top: 0; left: 0"/>
+    <!-- <button @click="leftcombilewall">左爬墙</button>
     <button @click="leftcombilewallsaying">左爬墙说</button>
     <button @click="leftcombilewallboring">左爬墙无聊</button>
     <button @click="leftcombilewallhearing">左爬墙听</button>
@@ -21,8 +21,7 @@
     <button @click="jumpback">跳回去</button>
     <button @click="angry">生气</button>
     <button @click="happy">开心</button>
-    <button @click="expreset">表情重置</button>
-
+    <button @click="expreset">表情重置</button> -->
   </div>
 </template>
 <script>
@@ -55,51 +54,7 @@ export default {
 
     //app.renderer.backgroundColor = 0x061698;
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
-    let characterName = 'NIKA'
-    if (characterId == 1) {
-      characterName = 'NEKO'
-    } else if (characterId == 2) {
-      characterName = 'NIKA'
-    }
-    model = Live2DModel.fromSync(`./${characterName}/${characterName}.model3.json`)
-
-    model.once('ready', () => {
-      console.log('模型准备完成')
-      //model.x = -55
-      // model.y = -80
-      // app.renderer.view.style.position = 'absolute'
-      // app.renderer.view.style.display = 'block'
-      // app.renderer.autoResize = true
-      // app.renderer.resize(window.innerWidth, window.innerHeight)
-      app.stage.addChild(model)
-      model.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
-      model.motion('JUMP_OUT')
-
-      model.internalModel.motionManager.on('motionStart', (group, index, audio) => {
-        currentMotion = group
-        console.log(`motion start ---> group:${group} index:${index} audio:${audio}`)
-      })
-      model.internalModel.motionManager.on('motionFinish', (v) => {
-        if (currentMotion == 'JUMP_BACK') {
-          app.stage.removeChild(model)
-          //model.destroy()
-          // model.stopAllMotions()
-          console.log('通知客户端 模型跳出动画播放结束')
-        }
-        currentMotion = ''
-        console.log(`motion finish ---> v: ${v}`)
-      })
-      model.on('hit', (hitAreas) => {
-        console.log('触发点击区域')
-        if (hitAreas.includes('Head')) {
-          console.log('------->')
-          // model.motion('touch_head')
-        }
-        if (hitAreas.includes('Body')) {
-          console.log('----> touch body --->')
-        }
-      })
-    })
+    loadMode(characterId);
     //model = await Live2DModel.from('./sealion/hgkoazarasi.model3.json')
 
     //model = await Live2DModel.from('https://download.lynksoul.com/models/Nika.zip')
@@ -110,28 +65,40 @@ export default {
     // app.stage.addChild(model)
   },
   methods: {
-    async changModel() {
-      app.stage.removeChildren()
-      let characterName = 'NIKA'
-      if (characterId == 1) {
-        characterId = 2
-      } else {
-        characterId = 1
-      }
-      if (characterId == 1) {
-        characterName = 'NEKO'
-      } else if (characterId == 2) {
-        characterName = 'NIKA'
-      }
-      let newModel = await Live2DModel.from(`./${characterName}/${characterName}.model3.json`)
-      newModel.x = -55
-      newModel.y = -80
-      app.stage.removeChild(model)
-      app.stage.addChild(newModel)
-      newModel.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
-      model = newModel
-      newModel = null
-      console.log('切换模型')
+    async changModel(newId) {
+      // if(newId==characterId) return;
+      // //app.stage.removeChildren()
+      // // let characterName = 'NIKA'
+      // // if (characterId == 1) {
+      // //   characterId = 2
+      // // } else {
+      // //   characterId = 1
+      // // }
+      // if (characterId == 1) {
+      //   characterName = 'NEKO'
+      // } else if (characterId == 2) {
+      //   characterName = 'NIKA'
+      // }
+      // let newModel = await Live2DModel.from(`./${characterName}/${characterName}.model3.json`)
+      // newModel.once('ready', () => {
+     
+      //   console.log('模型准备完成')
+      //   newModel.x = -55
+      //   newModel.y = -80
+      //   app.renderer.view.style.position = 'absolute'
+      //   app.renderer.view.style.display = 'block'
+      //   app.renderer.autoResize = true
+      //   app.renderer.resize(window.innerWidth, window.innerHeight)
+      //   app.stage.removeChild(model)
+      //   app.stage.addChild(newModel)
+      //   newModel.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+      //   newModel.motion('JUMP_OUT')
+      //   model = newModel
+      //   newModel = null
+      //   console.log('切换模型')
+      // });
+     
+     
     },
     leftcombilewall() {
       model.motion('LEFT')
@@ -158,10 +125,10 @@ export default {
       model.motion('RIGHT_SAYING')
     },
     rightcombilewallboring() {
-      model.motion('RIGHT_BORING')
+      model.motion('RIGHT_BORING');
     },
     rightcombilewallreset() {
-      model.motion('RIGHT_RESET')
+      model.motion('RIGHT_RESET');
     },
     motionreset() {
       model.motion('RESET')
@@ -193,42 +160,112 @@ export default {
     }
   }
 }
-// //禁止右击
-// document.addEventListener('contextmenu', (event) => {
-//   event.preventDefault()
-//   console.log('右击---->')
-//   window.chrome.webview.hostObjects.csobj.RightClick()
-// })
-// let currentMotion = ''
-// window.chrome.webview.addEventListener('message', (arg) => {
-//   var exp = arg.data['expression']
-//   if (!exp) {
-//     exp = 'NORMAL'
-//   }
-//   console.log('执行表情 ： ' + exp)
-//   model.expression('Reset')
-//   model.expression(exp)
-//   var motionExt = arg.data['motion']
-//   //if(motionExt=='CENTER_Breathing') return;
 
-//   if (motionExt) {
-//     if (currentMotion.includes('RIGHT') || currentMotion.includes('LEFT')) {
-//       if (motionExt.includes('RIGHT') || motionExt.includes('LEFT')) {
-//         model.motion('HeadReset', undefined, MotionPriority.FORCE)
-//         console.log('head expression reset')
-//       } else {
-//         model.motion('Reset', undefined, MotionPriority.FORCE)
-//         console.log('DragUp  Reset')
-//       }
-//     } else {
-//       console.log('Reset')
-//       model.motion('Reset', undefined, MotionPriority.FORCE)
-//     }
-//     console.log('执行动画 ： ' + motionExt)
-//     model.motion(motionExt, undefined, MotionPriority.FORCE)
-//     currentMotion = motionExt
-//   }
-// })
+function loadMode(modelId){
+   let characterName ='NEKO';
+      if (modelId == 1) {
+        characterName = 'NEKO'
+      } else if (modelId == 2) {
+        characterName = 'NIKA'
+      }
+   let modelJson= `./${characterName}/${characterName}.model3.json`;
+   model =  Live2DModel.fromSync(modelJson)
+        model.once('ready', () => {
+          console.log('模型准备完成')
+          model.x = -55
+          model.y = -80
+          app.renderer.view.style.position = 'absolute'
+          app.renderer.view.style.display = 'block'
+          app.renderer.autoResize = true
+          app.renderer.resize(window.innerWidth, window.innerHeight)
+          app.stage.addChild(model)
+          model.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+          model.motion('JUMP_OUT');
+          console.log('切换模型完成')
+          changeMode=false;
+          model.internalModel.motionManager.on('motionStart', (group, index, audio) => {
+            if(group=='JUMP_OUT'){
+              app.stage.addChild(model)
+            }
+            currentMotion=group;
+            console.log(`motion start ---> group:${group} index:${index} audio:${audio}`)
+            }
+          );
+        model.internalModel.motionManager.on('motionFinish', (v) => {
+          if (currentMotion == 'JUMP_BACK') {
+            app.stage.removeChild(model)
+            console.log('通知客户端 模型跳出动画播放结束')
+            if(changeMode==true&&characterId){
+              loadMode(characterId);
+            }
+          }
+          currentMotion = ''
+          console.log(`motion finish ---> v: ${v}`)
+          });
+
+          model.on('hit', (hitAreas) => {
+          console.log('触发点击区域')
+          if (hitAreas.includes('Head')) {
+            console.log('------->')
+            // model.motion('touch_head')
+          }
+          if (hitAreas.includes('Body')) {
+            console.log('----> touch body --->')
+          }
+        });
+      });    
+}
+let changeMode = false;
+function changModel(newId) {
+      if(newId==characterId) return;
+      changeMode=true;
+      characterId = newId;
+      model.motion('JUMP_BACK');      
+}
+//禁止右击
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault()
+  console.log('右击---->')
+  window.chrome.webview.hostObjects.csobj.RightClick()
+})
+window.chrome.webview.addEventListener('message', (arg) => {
+
+  console.log(arg.data);
+  var motionExt = arg.data['motion']
+  if(motionExt=='CHANGE_MODEL'){
+    var id = arg.data['motion_group_index'];
+    if(id<0)return;
+    changModel(id);
+    return;
+  }
+
+  var exp = arg.data['expression']
+  if (!exp) {
+    exp = 'NORMAL'
+  }
+  console.log('执行表情 ： ' + exp)
+  model.expression('Reset')
+  model.expression(exp)
+  //if(motionExt=='CENTER_Breathing') return;
+
+  if (motionExt) {
+    if (currentMotion.includes('RIGHT') || currentMotion.includes('LEFT')) {
+      if (motionExt.includes('RIGHT') || motionExt.includes('LEFT')) {
+        model.motion('HeadReset', undefined, MotionPriority.FORCE)
+        console.log('head expression reset')
+      } else {
+        model.motion('Reset', undefined, MotionPriority.FORCE)
+        console.log('DragUp  Reset')
+      }
+    } else {
+      console.log('Reset')
+      model.motion('Reset', undefined, MotionPriority.FORCE)
+    }
+    console.log('执行动画 ： ' + motionExt)
+    model.motion(motionExt, undefined, MotionPriority.FORCE)
+    currentMotion = motionExt
+  }
+})
 </script>
 <style>
 ::-webkit-scrollbar {

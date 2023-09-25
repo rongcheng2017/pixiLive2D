@@ -5,9 +5,9 @@
 		"Fps": 30.0,
 		"Loop": true,
 		"AreBeziersRestricted": true,
-		"CurveCount": 17,
-		"TotalSegmentCount": 50,
-		"TotalPointCount": 133,
+		"CurveCount": 14,
+		"TotalSegmentCount": 47,
+		"TotalPointCount": 127,
 		"UserDataCount": 0,
 		"TotalUserDataSize": 0
 	},
@@ -323,39 +323,6 @@
 				0,
 				4.4,
 				-9.1
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param41",
-			"Segments": [
-				0,
-				-1.8,
-				0,
-				4.4,
-				-1.8
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param42",
-			"Segments": [
-				0,
-				2.2,
-				0,
-				4.4,
-				2.2
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param43",
-			"Segments": [
-				0,
-				-10,
-				0,
-				4.4,
-				-10
 			]
 		},
 		{
