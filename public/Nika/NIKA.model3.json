@@ -60,9 +60,9 @@
           "File": "motions/right_side_reset.motion3.json"
         }
       ],
-      "CENTER_Breathing": [
+      "CENTER_BREATHING": [
         {
-          "File": "motions/idle.motion3.json"
+          "File": "motions/reset.motion3.json"
         }
       ],
       "Draging": [

@@ -1,83 +1,17 @@
 {
 	"Version": 3,
 	"Meta": {
-		"Duration": 1.633,
+		"Duration": 0.533,
 		"Fps": 30.0,
 		"Loop": true,
 		"AreBeziersRestricted": true,
-		"CurveCount": 22,
-		"TotalSegmentCount": 22,
-		"TotalPointCount": 44,
+		"CurveCount": 16,
+		"TotalSegmentCount": 16,
+		"TotalPointCount": 32,
 		"UserDataCount": 0,
 		"TotalUserDataSize": 0
 	},
 	"Curves": [
-		{
-			"Target": "Parameter",
-			"Id": "ParamAngleX",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.633,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamAngleY",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.633,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamAngleZ",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.633,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamBodyAngleX",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.633,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamBodyAngleY",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.633,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamBodyAngleZ",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.633,
-				0
-			]
-		},
 		{
 			"Target": "Parameter",
 			"Id": "ParamEyeLOpen",
@@ -85,7 +19,7 @@
 				0,
 				1,
 				0,
-				1.633,
+				0.533,
 				1
 			]
 		},
@@ -96,7 +30,7 @@
 				0,
 				1,
 				0,
-				1.633,
+				0.533,
 				1
 			]
 		},
@@ -107,7 +41,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -118,7 +52,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -129,7 +63,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -140,7 +74,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -151,7 +85,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -160,10 +94,10 @@
 			"Id": "ParamEyeBallY",
 			"Segments": [
 				0,
-				-0.1,
 				0,
-				1.633,
-				-0.1
+				0,
+				0.533,
+				0
 			]
 		},
 		{
@@ -173,7 +107,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -184,7 +118,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -195,7 +129,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -206,7 +140,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -217,7 +151,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -228,7 +162,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -239,7 +173,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		},
@@ -250,7 +184,7 @@
 				0,
 				0,
 				0,
-				1.633,
+				0.533,
 				0
 			]
 		}

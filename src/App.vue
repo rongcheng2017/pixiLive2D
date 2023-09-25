@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- style="position: absolute; top: 0; left: 0"  -->
-    <canvas ref="liveCanvas" style="position: absolute; top: 0; left: 0"/>
+    <canvas ref="liveCanvas" style="position: absolute; top: 0; left: 0" />
     <!-- <button @click="leftcombilewall">左爬墙</button>
     <button @click="leftcombilewallsaying">左爬墙说</button>
     <button @click="leftcombilewallboring">左爬墙无聊</button>
@@ -266,9 +266,8 @@ window.chrome.webview.addEventListener('message', (arg) => {
     currentMotion = motionExt
   }
 })
-</script>
-<style>
+</script> <style>
 ::-webkit-scrollbar {
   display: none;
 }
-</style>
+</style> 
