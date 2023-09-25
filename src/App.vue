@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- style="position: absolute; top: 0; left: 0"  -->
-    <canvas ref="liveCanvas"  />
-    <button @click="leftcombilewall">左爬墙</button>
+    <canvas ref="liveCanvas"  style="position: absolute; top: 0; left: 0"  />
+    <!-- <button @click="leftcombilewall">左爬墙</button>
     <button @click="leftcombilewallsaying">左爬墙说</button>
     <button @click="leftcombilewallboring">左爬墙无聊</button>
     <button @click="leftcombilewallhearing">左爬墙听</button>
@@ -19,7 +19,7 @@
     <button @click="jumpback">跳回去</button>
     <button @click="angry">生气</button>
     <button @click="happy">开心</button>
-    <button @click="expreset">表情重置</button>
+    <button @click="expreset">表情重置</button> -->
   </div>
 </template>
 <script>
@@ -135,12 +135,12 @@ function loadMode(modelId){
    model =  Live2DModel.fromSync(modelJson)
         model.once('ready', () => {
           console.log('模型准备完成')
-          // model.x = -55
-          // model.y = -80
-          // app.renderer.view.style.position = 'absolute'
-          // app.renderer.view.style.display = 'block'
-          // app.renderer.autoResize = true
-          // app.renderer.resize(window.innerWidth, window.innerHeight)
+          model.x = -55
+          model.y = -80
+          app.renderer.view.style.position = 'absolute'
+          app.renderer.view.style.display = 'block'
+          app.renderer.autoResize = true
+          app.renderer.resize(window.innerWidth, window.innerHeight)
           app.stage.addChild(model)
           model.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
           model.motion('JUMP_OUT');
@@ -186,52 +186,52 @@ function changModel(newId) {
       model.motion('JUMP_BACK');      
 }
 //禁止右击
-// document.addEventListener('contextmenu', (event) => {
-//   event.preventDefault()
-//   console.log('右击---->')
-//   window.chrome.webview.hostObjects.csobj.RightClick()
-// })
-// window.chrome.webview.addEventListener('message', (arg) => {
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault()
+  console.log('右击---->')
+  window.chrome.webview.hostObjects.csobj.RightClick()
+})
+window.chrome.webview.addEventListener('message', (arg) => {
 
-//   console.log(arg.data);
-//   var motionExt = arg.data['motion']
-//   if(motionExt=='CHANGE_MODEL'){
-//     var id = arg.data['motion_group_index'];
-//     if(id<0)return;
-//     changModel(id);
-//     return;
-//   }
+  console.log(arg.data);
+  var motionExt = arg.data['motion']
+  if(motionExt=='CHANGE_MODEL'){
+    var id = arg.data['motion_group_index'];
+    if(id<0)return;
+    changModel(id);
+    return;
+  }
 
-//   var exp = arg.data['expression']
-//   if (!exp) {
-//     exp = 'NORMAL'
-//   }
-//   console.log('执行表情 ： ' + exp)
-//   model.expression('Reset')
-//   model.expression(exp)
-//   //if(motionExt=='CENTER_Breathing') return;
+  var exp = arg.data['expression']
+  if (!exp) {
+    exp = 'NORMAL'
+  }
+  console.log('执行表情 ： ' + exp)
+  model.expression('Reset')
+  model.expression(exp)
+  //if(motionExt=='CENTER_Breathing') return;
 
-//   if (motionExt) {
-//     if (currentMotion.includes('RIGHT') || currentMotion.includes('LEFT')) {
-//       if (motionExt.includes('RIGHT') || motionExt.includes('LEFT')) {
-//         model.motion('HeadReset', undefined, MotionPriority.FORCE)
-//         console.log('head expression reset')
-//       } else {
-//         model.motion('Reset', undefined, MotionPriority.FORCE)
-//         console.log('DragUp  Reset')
-//       }
-//     } else {
-//       console.log('Reset')
-//       model.motion('Reset', undefined, MotionPriority.FORCE)
-//     }
-//     console.log('执行动画 ： ' + motionExt)
-//     model.motion(motionExt, undefined, MotionPriority.FORCE)
-//     currentMotion = motionExt
-//   }
-// })
+  if (motionExt) {
+    if (currentMotion.includes('RIGHT') || currentMotion.includes('LEFT')) {
+      if (motionExt.includes('RIGHT') || motionExt.includes('LEFT')) {
+        model.motion('HeadReset', undefined, MotionPriority.FORCE)
+        console.log('head expression reset')
+      } else {
+        model.motion('Reset', undefined, MotionPriority.FORCE)
+        console.log('DragUp  Reset')
+      }
+    } else {
+      console.log('Reset')
+      model.motion('Reset', undefined, MotionPriority.FORCE)
+    }
+    console.log('执行动画 ： ' + motionExt)
+    model.motion(motionExt, undefined, MotionPriority.FORCE)
+    currentMotion = motionExt
+  }
+})
 </script> 
-<!-- <style>
+<style>
 ::-webkit-scrollbar {
   display: none;
 }
-</style>  -->
+</style> 

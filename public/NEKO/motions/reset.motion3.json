@@ -5,9 +5,9 @@
 		"Fps": 30.0,
 		"Loop": true,
 		"AreBeziersRestricted": true,
-		"CurveCount": 54,
-		"TotalSegmentCount": 54,
-		"TotalPointCount": 108,
+		"CurveCount": 48,
+		"TotalSegmentCount": 48,
+		"TotalPointCount": 96,
 		"UserDataCount": 0,
 		"TotalUserDataSize": 0
 	},
@@ -149,10 +149,10 @@
 			"Id": "ParamEyeBallY",
 			"Segments": [
 				0,
-				0.1,
+				0,
 				0,
 				0.6,
-				0.1
+				0
 			]
 		},
 		{
@@ -169,17 +169,6 @@
 		{
 			"Target": "Parameter",
 			"Id": "exp2",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "exp11",
 			"Segments": [
 				0,
 				0,
@@ -213,17 +202,6 @@
 		{
 			"Target": "Parameter",
 			"Id": "exp5",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "exp10",
 			"Segments": [
 				0,
 				0,
@@ -268,17 +246,6 @@
 		{
 			"Target": "Parameter",
 			"Id": "exp9",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "exp12",
 			"Segments": [
 				0,
 				0,
@@ -388,17 +355,6 @@
 		},
 		{
 			"Target": "Parameter",
-			"Id": "Param27",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
 			"Id": "Param26",
 			"Segments": [
 				0,
@@ -411,17 +367,6 @@
 		{
 			"Target": "Parameter",
 			"Id": "Param50",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param30",
 			"Segments": [
 				0,
 				0,
@@ -542,6 +487,17 @@
 		},
 		{
 			"Target": "Parameter",
+			"Id": "Param54",
+			"Segments": [
+				0,
+				0,
+				0,
+				0.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
 			"Id": "Param33",
 			"Segments": [
 				0,
@@ -564,17 +520,6 @@
 		},
 		{
 			"Target": "Parameter",
-			"Id": "Param57",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
 			"Id": "Param34",
 			"Segments": [
 				0,
@@ -587,17 +532,6 @@
 		{
 			"Target": "Parameter",
 			"Id": "Param35",
-			"Segments": [
-				0,
-				0,
-				0,
-				0.6,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "Param58",
 			"Segments": [
 				0,
 				0,

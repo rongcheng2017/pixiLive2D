@@ -62,11 +62,21 @@
 				"File": "motions/side_reset.motion3.json"
 			  }
 			],
-			"CENTER_Breathing": [
+			"CENTER_BREATHING": [
 			  {
 				"File": "motions/reset.motion3.json"
 			  }
 			],
+			"RIGHT_BREATHING": [
+				{
+				  "File": "motions/head_reset.motion3.json"
+				}
+			  ],
+			  "LEFT_BREATHING": [
+				{
+				  "File": "motions/head_reset.motion3.json"
+				}
+			  ],
 			"Draging": [
 			  {
 				"File": "motions/draging.motion3.json"
