@@ -175,7 +175,7 @@
 			],
 			"CENTER_DropPhone": [
 			  {
-				"File": "motions/reset.motion3.json"
+				"File": "motions/drop_phone.motion3.json"
 			  }
 			]
 		  }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- style="position: absolute; top: 0; left: 0"  -->
-    <canvas ref="liveCanvas"  style="position: absolute; top: 0; left: 0"  />
+    <canvas ref="liveCanvas"  style="position: absolute; top: 0; left: 0" />
     <!-- <button @click="leftcombilewall">左爬墙</button>
     <button @click="leftcombilewallsaying">左爬墙说</button>
     <button @click="leftcombilewallboring">左爬墙无聊</button>
@@ -13,6 +13,8 @@
     <button @click="headreset">头部动画重置</button>
     <button @click="motionreset">动画重置</button>
     <button @click="changModel">切换模型</button>
+    <button @click="holdphone">拿手机</button>
+    <button @click="dropphone">放手机</button>
     <button @click="saying">说话</button>
     <button @click="hearing">听</button>
     <button @click="jumpout">跳出</button>
@@ -34,16 +36,20 @@ let modelJsonUrl = ""
 let postionX =0;
 let postionY=0;
 let modelScale=1;
+let catalogType=-1;
+let name ="";
 let currentMotion = ''
 export default {
   async mounted() {
     // 获取URL参数
     const queryParams = new URLSearchParams(window.location.search)
     // 获取名为 "characterid" 的查询参数的值
-    modelJsonUrl = queryParams.get('model_json')??"https://download.lynksoul.com/models/Neko/Neko.model3.json"
+    modelJsonUrl = queryParams.get('model_json')??"./public/Nika/Nika.model3.json"
     postionX = queryParams.get('x')??-55
     postionY = queryParams.get('y')??-80
     modelScale = queryParams.get('scale')??0.045
+    catalogType= queryParams.get('catalog')??-1;
+    name = queryParams.get('name')??"";
     console.log(`modelJsonUrl ${modelJsonUrl} x:${postionX} y:${postionY} scale:${modelScale}`)
     app = new PIXI.Application({
       view: this.$refs.liveCanvas,
@@ -118,13 +124,19 @@ export default {
       model.motion('HEAD_RESET',undefined, MotionPriority.FORCE)
     },
     happy(){
-      model.expression('HAPPY',undefined, MotionPriority.FORCE)
+      model.expression('HAPPY')
     },
     angry(){
-      model.expression('ANGRY',undefined, MotionPriority.FORCE)
+      model.expression('ANGRY')
     },
     expreset(){
       model.expression('EXP_RESET')
+    },
+    holdphone(){
+      model.motion('CENTER_HoldPhone',undefined, MotionPriority.FORCE)
+    },
+    dropphone(){
+      model.motion('CENTER_DropPhone',undefined, MotionPriority.FORCE)
     }
   }
 }
@@ -139,7 +151,7 @@ function loadMode(modelJsonUrl){
           app.renderer.view.style.display = 'block'
           app.renderer.autoResize = true
           app.renderer.resize(window.innerWidth, window.innerHeight)
-          app.stage.addChild(model)
+         app.stage.addChild(model)
           model.scale.set(modelScale) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
           model.motion('JUMP_OUT');
           console.log('切换模型完成')
@@ -178,21 +190,28 @@ function loadMode(modelJsonUrl){
 }
 let changeMode = false;
 function changModel(modelInfo) {
-  debugger
     var newModelJsonUrl = modelInfo['model_json'];
     if(modelJsonUrl==newModelJsonUrl||!modelJsonUrl) return;
       postionX = modelInfo['x']??0;
       postionY = modelInfo['y']??0;
       modelScale = modelInfo['scale']??1;
-      changeMode=true;
+      name = modelInfo['name']??"";
+      catalogType = modelInfo['catalog']??-1;
       modelJsonUrl = newModelJsonUrl;
-      model.motion('JUMP_BACK');      
+      if(catalogType==1){//官方模型才有跳出动画
+        changeMode=true;
+        model.motion('JUMP_BACK'); 
+      }else{
+        app.stage.removeChild(model);
+        loadMode(modelJsonUrl);
+      }
+      
 }
 //禁止右击
 document.addEventListener('contextmenu', (event) => {
   event.preventDefault()
   console.log('右击---->')
-  window.chrome.webview.hostObjects.csobj.RightClick()
+  //window.chrome.webview.hostObjects.csobj.RightClick()
 })
 window.chrome.webview.addEventListener('message', (arg) => {
 
@@ -210,22 +229,22 @@ window.chrome.webview.addEventListener('message', (arg) => {
     exp = 'NORMAL'
   }
   console.log('执行表情 ： ' + exp)
-  model.expression('Reset')
+  model.expression('EXP_RESET')
   model.expression(exp)
   //if(motionExt=='CENTER_Breathing') return;
 
   if (motionExt) {
     if (currentMotion.includes('RIGHT') || currentMotion.includes('LEFT')) {
       if (motionExt.includes('RIGHT') || motionExt.includes('LEFT')) {
-        model.motion('HeadReset', undefined, MotionPriority.FORCE)
+        model.motion('HEAD_RESET', undefined, MotionPriority.FORCE)
         console.log('head expression reset')
       } else {
-        model.motion('Reset', undefined, MotionPriority.FORCE)
+        model.motion('RESET', undefined, MotionPriority.FORCE)
         console.log('DragUp  Reset')
       }
     } else {
       console.log('Reset')
-      model.motion('Reset', undefined, MotionPriority.FORCE)
+      model.motion('RESET', undefined, MotionPriority.FORCE)
     }
     console.log('执行动画 ： ' + motionExt)
     model.motion(motionExt, undefined, MotionPriority.FORCE)
