@@ -1,10 +1,10 @@
 {
   "Version": 3,
   "FileReferences": {
-    "Moc": "NIKA.moc3",
-    "Textures": ["NIKA.4096/texture_00.png"],
-    "Physics": "NIKA.physics3.json",
-    "DisplayInfo": "NIKA.cdi3.json",
+    "Moc": "Nika.moc3",
+    "Textures": ["Nika.4096/texture_00.png"],
+    "Physics": "Nika.physics3.json",
+    "DisplayInfo": "Nika.cdi3.json",
     "Expressions": [
       {
         "Name": "ANGRY",

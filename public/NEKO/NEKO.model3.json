@@ -1,12 +1,12 @@
 {
 	"Version": 3,
 	"FileReferences": {
-		"Moc": "NEKO.moc3",
+		"Moc": "Neko.moc3",
 		"Textures": [
-			"NEKO.4096/texture_00.png"
+			"Neko.4096/texture_00.png"
 		],
-		"Physics": "NEKO.physics3.json",
-		"DisplayInfo": "NEKO.cdi3.json",
+		"Physics": "Neko.physics3.json",
+		"DisplayInfo": "Neko.cdi3.json",
 		"Expressions": [
 			{
 			  "Name": "ANGRY",

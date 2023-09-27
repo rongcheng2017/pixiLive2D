@@ -30,16 +30,21 @@ import { MotionPriority } from 'pixi-live2d-display'
 window.PIXI = PIXI // 为了pixi-live2d-display内部调用
 let app // 为了存储pixi实例
 export let model // 为了存储live2d实例
-let characterId = 1
+let modelJsonUrl = ""
+let postionX =0;
+let postionY=0;
+let modelScale=1;
 let currentMotion = ''
 export default {
   async mounted() {
     // 获取URL参数
     const queryParams = new URLSearchParams(window.location.search)
     // 获取名为 "characterid" 的查询参数的值
-    characterId = queryParams.get('characterid')??1
-    console.log('character id')
-    console.log(characterId)
+    modelJsonUrl = queryParams.get('model_json')??"https://download.lynksoul.com/models/Neko/Neko.model3.json"
+    postionX = queryParams.get('x')??-55
+    postionY = queryParams.get('y')??-80
+    modelScale = queryParams.get('scale')??0.045
+    console.log(`modelJsonUrl ${modelJsonUrl} x:${postionX} y:${postionY} scale:${modelScale}`)
     app = new PIXI.Application({
       view: this.$refs.liveCanvas,
       transparent: true,
@@ -52,7 +57,7 @@ export default {
 
     //app.renderer.backgroundColor = 0x061698;
     // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
-    loadMode(characterId);
+    loadMode(modelJsonUrl);
   },
   methods: {
      changModel() {
@@ -124,25 +129,18 @@ export default {
   }
 }
 
-function loadMode(modelId){
-   let characterName ='NEKO';
-      if (modelId == 1) {
-        characterName = 'NEKO'
-      } else if (modelId == 2) {
-        characterName = 'NIKA'
-      }
-   let modelJson= `./${characterName}/${characterName}.model3.json`;
-   model =  Live2DModel.fromSync(modelJson)
+function loadMode(modelJsonUrl){
+   model =  Live2DModel.fromSync(modelJsonUrl)
         model.once('ready', () => {
           console.log('模型准备完成')
-          model.x = -55
-          model.y = -80
+          model.x = postionX
+          model.y = postionY
           app.renderer.view.style.position = 'absolute'
           app.renderer.view.style.display = 'block'
           app.renderer.autoResize = true
           app.renderer.resize(window.innerWidth, window.innerHeight)
           app.stage.addChild(model)
-          model.scale.set(0.045) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
+          model.scale.set(modelScale) // 调整缩放比例，一般原始资源尺寸非常大，需要缩小
           model.motion('JUMP_OUT');
           console.log('切换模型完成')
           changeMode=false;
@@ -158,8 +156,8 @@ function loadMode(modelId){
           if (currentMotion == 'JUMP_BACK') {
             app.stage.removeChild(model)
             console.log('通知客户端 模型跳出动画播放结束')
-            if(changeMode==true&&characterId){
-              loadMode(characterId);
+            if(changeMode==true&&modelJsonUrl){
+              loadMode(modelJsonUrl);
             }
           }
           currentMotion = ''
@@ -179,10 +177,15 @@ function loadMode(modelId){
       });    
 }
 let changeMode = false;
-function changModel(newId) {
-      if(newId==characterId) return;
+function changModel(modelInfo) {
+  debugger
+    var newModelJsonUrl = modelInfo['model_json'];
+    if(modelJsonUrl==newModelJsonUrl||!modelJsonUrl) return;
+      postionX = modelInfo['x']??0;
+      postionY = modelInfo['y']??0;
+      modelScale = modelInfo['scale']??1;
       changeMode=true;
-      characterId = newId;
+      modelJsonUrl = newModelJsonUrl;
       model.motion('JUMP_BACK');      
 }
 //禁止右击
@@ -196,9 +199,9 @@ window.chrome.webview.addEventListener('message', (arg) => {
   console.log(arg.data);
   var motionExt = arg.data['motion']
   if(motionExt=='CHANGE_MODEL'){
-    var id = arg.data['motion_group_index'];
-    if(id<0)return;
-    changModel(id);
+    var modelInfo = arg.data['model_info'];
+    if(!modelInfo)return;
+    changModel(modelInfo);
     return;
   }
 
