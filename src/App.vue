@@ -196,7 +196,7 @@ function changModel(modelInfo) {
       postionY = modelInfo['y']??0;
       modelScale = modelInfo['scale']??1;
       name = modelInfo['name']??"";
-      catalogType = modelInfo['catalog']??-1;
+     
       modelJsonUrl = newModelJsonUrl;
       if(catalogType==1){//官方模型才有跳出动画
         changeMode=true;
@@ -205,6 +205,7 @@ function changModel(modelInfo) {
         app.stage.removeChild(model);
         loadMode(modelJsonUrl);
       }
+      catalogType = modelInfo['catalog']??-1;
       
 }
 //禁止右击
