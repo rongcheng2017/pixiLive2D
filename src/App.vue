@@ -44,7 +44,7 @@ export default {
     const queryParams = new URLSearchParams(window.location.search)
     // 获取名为 "characterid" 的查询参数的值
     //modelJsonUrl = queryParams.get('model_json')??"./public/Neko/Neko.model3.json"
-    modelJsonUrl = "./Neko/Neko.model3.json"
+    modelJsonUrl = "./Nika/Nika.model3.json"
     postionX = queryParams.get('x') ?? -55
     postionY = queryParams.get('y') ?? -80
     modelScale = queryParams.get('scale') ?? 0.045
@@ -163,7 +163,7 @@ function loadMode(modelJsonUrl) {
       currentMotion = group;
       console.log(`StoreMotion is ${storeMotion}`);
       //左右爬墙前需要将头部动画都归位
-      if((group=='LEFT'||group=='RIGHT')&&!storeMotion){
+      if((group=='LEFT'||group=='RIGHT'||group=='CENTER_SAYING')&&!storeMotion){
         storeMotion = group;
         currentMotion ='HEAD_RESET'
         model.motion(currentMotion, undefined, MotionPriority.FORCE);
