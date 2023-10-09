@@ -101,9 +101,9 @@
 					"File": "motions/tap_head.motion3.json"
 				}
 			],
-			"TapBody1": [
+			"TapBody": [
 				{
-					"File": "motions/waving_dance.motion3.json"
+					"File": "motions/angry.motion3.json"
 				}
 			],
 			"JUMP_BACK": [
@@ -200,11 +200,11 @@
 	],
 	"HitAreas": [
 		{
-			"Id": "ArtMesh80",
+			"Id": "ArtMesh213",
 			"Name": "Head"
 		},
 		{
-			"Id": "",
+			"Id": "ArtMesh227",
 			"Name": "Body"
 		}
 	]

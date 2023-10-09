@@ -172,5 +172,15 @@
 				"ParamEyeROpen"
 			]
 		}
+	],
+	"HitAreas": [
+		{
+			"Id": "ArtMesh113",
+			"Name": "Head"
+		},
+		{
+			"Id": "ArtMesh96",
+			"Name": "Body"
+		}
 	]
 }

@@ -49,7 +49,6 @@ export default {
     postionY = queryParams.get('y') ?? -80
     modelScale = queryParams.get('scale') ?? 0.045
     catalogType = queryParams.get('catalog') ?? -1;
-    name = queryParams.get('name') ?? "";
     console.log(`modelJsonUrl ${modelJsonUrl} x:${postionX} y:${postionY} scale:${modelScale}`)
     app = new PIXI.Application({
       view: this.$refs.liveCanvas,
@@ -57,12 +56,9 @@ export default {
       autoStart: true,
       antialias: true,
       backgroundAlpha: 0
-      //  with:1300,
-      //  height:1000,
     })
 
     //app.renderer.backgroundColor = 0x061698;
-    // 打包后live2d资源会出现在dist/下，这里用相对路径就能引用到了
     loadMode(modelJsonUrl);
   },
   methods: {
@@ -175,7 +171,7 @@ function loadMode(modelJsonUrl) {
       console.log(`motion start ---> motion:${currentMotion} index:${index} audio:${audio}`)
     }
     );
-    //DragUp --> RESET --> LEFT/RIGHT/CENTER
+    
     model.internalModel.motionManager.on('motionFinish', (v) => {
       if (currentMotion == 'JUMP_BACK') {
         app.stage.removeChild(model)
@@ -198,15 +194,37 @@ function loadMode(modelJsonUrl) {
       currentMotion = ''
       console.log(`motion finish ---> v: ${v}`)
     });
+    
     model.on('hit', (hitAreas) => {
       console.log('触发点击区域')
+   
       if (hitAreas.includes('Head')) {
+        model.motion('TapHead', undefined, MotionPriority.FORCE)
         console.log('-------> touch head -?--->')
-        // model.motion('touch_head')
       }
       if (hitAreas.includes('Body')) {
+        model.motion('TapBody', undefined, MotionPriority.FORCE)
         console.log('----> touch body --->')
       }
+    });
+    model.on('pointerdown',(a)=>{
+      if(a.data.buttons ==2){
+        console.log("右击");
+      }else{
+        const { x, y } = a.data.global 
+        const point = model.hitTest(x, y)
+        if (point.includes('Head')) {
+        model.motion('TapHead', undefined, MotionPriority.FORCE)
+        console.log('-------> touch head -?--->')
+        }
+        if (point.includes('Body')) {
+          model.motion('TapBody', undefined, MotionPriority.FORCE)
+          console.log('----> touch body --->')
+        }
+        console.log("左击");
+      }
+      
+      
     });
   });
 }
@@ -231,22 +249,23 @@ function changModel(modelInfo) {
 
 }
 //禁止右击
-document.addEventListener('contextmenu', (event) => {
-  event.preventDefault()
-  console.log('右击------->')
-  //window.chrome.webview.hostObjects.csobj.RightClick()
-})
+// document.addEventListener('contextmenu', (event) => {
+//   event.preventDefault()
+//   console.log('右击------->')
+//   //window.chrome.webview.hostObjects.csobj.RightClick()
+// })
 window.chrome.webview.addEventListener('message', (arg) => {
-
   console.log(arg.data);
   var motionExt = arg.data['motion']
+  //切换模型
   if (motionExt == 'CHANGE_MODEL') {
+    console.log("切换模型");
     var modelInfo = arg.data['model_info'];
     if (!modelInfo) return;
     changModel(modelInfo);
     return;
   }
-
+  //执行表情
   var exp = arg.data['expression']
   if (!exp) {
     exp = 'NORMAL'
@@ -254,7 +273,7 @@ window.chrome.webview.addEventListener('message', (arg) => {
   console.log('执行表情 ： ' + exp)
   model.expression('EXP_RESET')
   model.expression(exp)
-
+  //执行动作
   if (motionExt) {
     // if (currentMotion.includes('RIGHT') || currentMotion.includes('LEFT')||currentMotion.includes('DragUp')) {
     //   if (motionExt.includes('RIGHT') || motionExt.includes('LEFT')) {
@@ -274,6 +293,22 @@ window.chrome.webview.addEventListener('message', (arg) => {
 
   }
 })
+document.body.addEventListener('mousedown', evt => {
+    if(evt.button==0)
+    {
+      window.chrome.webview.postMessage('leftBtnDown');
+      evt.preventDefault();
+      evt.stopPropagation();
+
+    }
+    else if(evt.button==2)
+        window.chrome.webview.postMessage('rightBtnDown');                                   
+    });                           
+document.body.addEventListener('mouseup', evt => {
+    window.chrome.webview.postMessage('leftBtnUp');
+});
+
+
 </script> 
 <style>
 ::-webkit-scrollbar {

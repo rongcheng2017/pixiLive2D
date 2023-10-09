@@ -2,7 +2,9 @@
   "Version": 3,
   "FileReferences": {
     "Moc": "Nika.moc3",
-    "Textures": ["Nika.4096/texture_00.png"],
+    "Textures": [
+      "Nika.4096/texture_00.png"
+    ],
     "Physics": "Nika.physics3.json",
     "DisplayInfo": "Nika.cdi3.json",
     "Expressions": [
@@ -10,7 +12,6 @@
         "Name": "ANGRY",
         "File": "expressions/angry_brow.exp3.json"
       },
-
       {
         "Name": "HAPPY",
         "File": "expressions/happy.exp3.json"
@@ -95,7 +96,7 @@
           "File": "motions/tap_head.motion3.json"
         }
       ],
-      "TapBody1": [
+      "TapBody": [
         {
           "File": "motions/waving_dance.motion3.json"
         }
@@ -150,7 +151,6 @@
           "File": "motions/right_normal.motion3.json"
         }
       ],
-
       "CENTER_HEARING": [
         {
           "File": "motions/center_hearing.motion3.json"
@@ -187,7 +187,20 @@
     {
       "Target": "Parameter",
       "Name": "EyeBlink",
-      "Ids": ["ParamEyeLOpen", "ParamEyeROpen"]
+      "Ids": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ]
+    }
+  ],
+  "HitAreas": [
+    {
+      "Id": "ArtMesh113",
+      "Name": "Head"
+    },
+    {
+      "Id": "ArtMesh93",
+      "Name": "Body"
     }
   ]
 }
