@@ -43,8 +43,8 @@ export default {
     // 获取URL参数
     const queryParams = new URLSearchParams(window.location.search)
     // 获取名为 "characterid" 的查询参数的值
-    //modelJsonUrl = queryParams.get('model_json')??"./public/Neko/Neko.model3.json"
-    modelJsonUrl = "./Nika/Nika.model3.json"
+    modelJsonUrl = queryParams.get('model_json')??"./public/Neko/Neko.model3.json"
+    //modelJsonUrl = "./Nika/Nika.model3.json"
     postionX = queryParams.get('x') ?? -55
     postionY = queryParams.get('y') ?? -80
     modelScale = queryParams.get('scale') ?? 0.045
@@ -153,9 +153,9 @@ function loadMode(modelJsonUrl) {
     console.log('切换模型完成')
     changeMode = false;
     model.internalModel.motionManager.on('motionStart', (group, index, audio) => {
-      if (group == 'JUMP_OUT') {
-        app.stage.addChild(model)
-      }
+      // if (group == 'JUMP_OUT') {
+      //   app.stage.addChild(model)
+      // }
       currentMotion = group;
       console.log(`StoreMotion is ${storeMotion}`);
       //左右爬墙前需要将头部动画都归位
@@ -195,18 +195,6 @@ function loadMode(modelJsonUrl) {
       console.log(`motion finish ---> v: ${v}`)
     });
     
-    model.on('hit', (hitAreas) => {
-      console.log('触发点击区域')
-   
-      if (hitAreas.includes('Head')) {
-        model.motion('TapHead', undefined, MotionPriority.FORCE)
-        console.log('-------> touch head -?--->')
-      }
-      if (hitAreas.includes('Body')) {
-        model.motion('TapBody', undefined, MotionPriority.FORCE)
-        console.log('----> touch body --->')
-      }
-    });
     model.on('pointerdown',(a)=>{
       if(a.data.buttons ==2){
         console.log("右击");
