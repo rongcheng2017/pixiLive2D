@@ -137,8 +137,8 @@ export default {
   }
 }
  var storeMotion=null;
-function loadMode(modelJsonUrl) {
-  model = Live2DModel.fromSync(modelJsonUrl)
+function loadMode(modelUrl) {
+  model = Live2DModel.fromSync(modelUrl)
   model.once('ready', () => {
     console.log('模型准备完成')
     model.x = postionX
@@ -153,9 +153,6 @@ function loadMode(modelJsonUrl) {
     console.log('切换模型完成')
     changeMode = false;
     model.internalModel.motionManager.on('motionStart', (group, index, audio) => {
-      // if (group == 'JUMP_OUT') {
-      //   app.stage.addChild(model)
-      // }
       currentMotion = group;
       console.log(`StoreMotion is ${storeMotion}`);
       //左右爬墙前需要将头部动画都归位
@@ -224,16 +221,16 @@ function changModel(modelInfo) {
   postionY = modelInfo['y'] ?? 0;
   modelScale = modelInfo['scale'] ?? 1;
   //name = modelInfo['name'] ?? "";
-
-  modelJsonUrl = newModelJsonUrl;
+  
   if (catalogType == 1) {//官方模型才有跳出动画
     changeMode = true;
-    model.motion('JUMP_BACK');
+    modelJsonUrl = newModelJsonUrl;
+    model.motion('JUMP_BACK',undefined, MotionPriority.FORCE);
   } else {
     app.stage.removeChild(model);
-    loadMode(modelJsonUrl);
+    loadMode(newModelJsonUrl);
   }
-  catalogType = modelInfo['catalog'] ?? -1;
+  catalogType = modelInfo['catalog_id'] ?? -1;
 
 }
 //禁止右击
